@@ -1,10 +1,7 @@
 package com.capT.jdbc;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
+import java.sql.*;
+import java.util.*;
 
 public class SelectOperations {
 
@@ -13,16 +10,24 @@ public class SelectOperations {
         String url = "jdbc:postgresql://localhost:5432/EMP";
         String user = "postgres";
         String pass = "root";
-
-        // 🔁 CHANGE ONLY THIS QUERY
-        String sql = "SELECT * FROM student where name='Anjali' or sid=1"; 
+        Scanner sc = new Scanner(System.in);
+        String sql="";
+        System.out.println("Enter Y to print the table & N to give the sid");
+        if(sc.next().toUpperCase().charAt(0) == 'Y')
+        	sql = "SELECT * FROM student";
+        else
+        {
+        	sql = "SELECT * FROM student where ";
+            System.out.println("Enter sid : ");
+        	int sid = sc.nextInt();
+        	sql+="sid = "+sid;
+        }
         try {
             Class.forName("org.postgresql.Driver");
 
             Connection con = DriverManager.getConnection(url, user, pass);
 
             PreparedStatement ps = con.prepareStatement(sql);
-
             ResultSet rs = ps.executeQuery();
 
             ResultSetMetaData meta = rs.getMetaData();
@@ -44,11 +49,11 @@ public class SelectOperations {
                 }
                 System.out.println();
             }
-
             con.close();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+        sc.close();
     }
 }
