@@ -15,8 +15,9 @@ public class EmployeeCRUDmain {
 	        System.out.println("2. Update Name");
 	        System.out.println("3. Update Name");
 	        System.out.println("4. Delete");
-	        System.out.println("5. Select ");
-	        System.out.println("6. Exit");
+	        System.out.println("5. Select By ID");
+	        System.out.println("6. Select All");
+	        System.out.println("7. Exit");
 	        System.out.print("Enter your choice: ");
 			int c = sc.nextInt();
 			switch(c) {
@@ -49,9 +50,11 @@ public class EmployeeCRUDmain {
 						id = sc.nextInt();
 						ip.fetchEmployee(id);
 						break;
-				case 6: System.out.println("---Exiting--- Byeeee");
+				case 7: System.out.println("---Exiting--- Byeeee");
 						sc.close();
 						System.exit(0);
+				case 6: ip.findAllEmployee();
+						break;
 				default: System.out.println("Wrong Choice");;
 			}
 		}

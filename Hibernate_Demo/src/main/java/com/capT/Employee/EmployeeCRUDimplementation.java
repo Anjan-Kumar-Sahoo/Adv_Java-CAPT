@@ -2,12 +2,14 @@ package com.capT.Employee;
 
 
 
+import java.util.List;
 import java.util.Scanner;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
+import jakarta.persistence.Query;
 
 public class EmployeeCRUDimplementation implements EmployeeCRUD{
 
@@ -65,5 +67,17 @@ public class EmployeeCRUDimplementation implements EmployeeCRUD{
 		System.out.println("Id : "+e.getSid());
 		System.out.println("Name : "+e.getName());
 		System.out.println("Ph No. :"+e.getPhno());
+	}
+	@Override
+	public void findAllEmployee()
+	{
+		Query q = em.createQuery("select e from Employee e");
+		List<Employee> elist = q.getResultList();
+		for(Employee e : elist)
+		{
+			System.out.println("Id : "+e.getSid());
+			System.out.println("Name : "+e.getName());
+			System.out.println("Ph No. :"+e.getPhno());
+		}
 	}
 }

@@ -6,5 +6,6 @@ public interface EmployeeCRUD {
 	void updateEmployeePhone(int id, Long phno);
 	void deleteEmployee(int id);
 	void fetchEmployee(int id);
+	void findAllEmployee();
 
 }
