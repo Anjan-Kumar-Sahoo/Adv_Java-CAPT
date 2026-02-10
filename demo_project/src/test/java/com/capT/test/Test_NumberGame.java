@@ -1,4 +1,4 @@
-package com;
+package com.capT.test;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -15,7 +15,6 @@ public class Test_NumberGame {
 		System.out.println("NumberGame object created");
 	}
 
-	// Test 1: isPrime with prime numbers
 	@Test
 	public void testIsPrime_ValidPrimes() {
 		boolean expectedOutput = true;
@@ -31,7 +30,6 @@ public class Test_NumberGame {
 		System.out.println("isPrime Valid Test PASS");
 	}
 	
-	// Test 2: isPrime with non-prime numbers
 	@Test
 	public void testIsPrime_InvalidPrimes() {
 		boolean expectedOutput = false;
@@ -47,7 +45,6 @@ public class Test_NumberGame {
 		System.out.println("isPrime Invalid Test PASS");
 	}
 	
-	// Test 1: isArmstrong with valid Armstrong numbers
 	@Test
 	public void testIsArmstrong_ValidArmstrong() {
 		boolean expectedOutput = true;
@@ -63,7 +60,6 @@ public class Test_NumberGame {
 		System.out.println("isArmstrong Valid Test PASS");
 	}
 	
-	// Test 2: isArmstrong with invalid Armstrong numbers
 	@Test
 	public void testIsArmstrong_InvalidArmstrong() {
 		boolean expectedOutput = false;
@@ -79,7 +75,6 @@ public class Test_NumberGame {
 		System.out.println("isArmstrong Invalid Test PASS");
 	}
 	
-	// Test 1: isPalindrome with valid palindromes
 	@Test
 	public void testIsPalindrome_ValidPalindrome() {
 		boolean expectedOutput = true;
@@ -95,7 +90,6 @@ public class Test_NumberGame {
 		System.out.println("isPalindrome Valid Test PASS");
 	}
 	
-	// Test 2: isPalindrome with non-palindromes
 	@Test
 	public void testIsPalindrome_InvalidPalindrome() {
 		boolean expectedOutput = false;

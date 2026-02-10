@@ -3,7 +3,7 @@ package com.capT;
 public class NumberGame {
 
 	// Method to check if a number is prime
-	public static boolean isPrime(int n) {
+	public boolean isPrime(int n) {
 		if (n <= 1) {
 			return false;
 		}
@@ -22,7 +22,7 @@ public class NumberGame {
 	}
 	
 	// Method to check if a number is an Armstrong number
-	public static boolean isArmstrong(int n) {
+	public boolean isArmstrong(int n) {
 		int original = n;
 		int sum = 0;
 		int digits = String.valueOf(n).length();
@@ -37,7 +37,7 @@ public class NumberGame {
 	}
 	
 	// Method to check if a number is a palindrome
-	public static boolean isPalindrome(int n) {
+	public boolean isPalindrome(int n) {
 		int original = n;
 		int reversed = 0;
 		
