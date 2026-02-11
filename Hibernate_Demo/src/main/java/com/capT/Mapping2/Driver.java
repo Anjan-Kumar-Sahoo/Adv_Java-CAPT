@@ -15,11 +15,12 @@ public class Driver {
 		
 		Engine e = new Engine();
 		e.setId(100);
-		e.setType("V8");
+		e.setCc(1500);
 		
 		Car c = new Car();
 		c.setId(1);
 		c.setModel("Tesla Model S");
+		c.setBrand("Tesla");
 		c.setEngine(e);
 		
 		et.begin();

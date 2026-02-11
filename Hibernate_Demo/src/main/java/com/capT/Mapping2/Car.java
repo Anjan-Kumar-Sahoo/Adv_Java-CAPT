@@ -9,6 +9,7 @@ public class Car {
 	@Id
 	private int id;
 	private String model;
+	private String brand;
 	@OneToOne
 	Engine engine;
 	public int getId() {
@@ -23,16 +24,16 @@ public class Car {
 	public void setModel(String model) {
 		this.model = model;
 	}
+	public String getBrand() {
+		return brand;
+	}
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
 	public Engine getEngine() {
 		return engine;
 	}
 	public void setEngine(Engine engine) {
 		this.engine = engine;
 	}
-	
-	public static void main(String ...args)
-	{
-		
-	}
-
 }

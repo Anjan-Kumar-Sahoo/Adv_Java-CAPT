@@ -3,7 +3,6 @@ package com.capT.Employee;
 
 
 import java.util.List;
-import java.util.Scanner;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
