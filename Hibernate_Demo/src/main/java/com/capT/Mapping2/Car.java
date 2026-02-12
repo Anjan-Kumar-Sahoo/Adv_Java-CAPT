@@ -11,7 +11,7 @@ public class Car {
 	private String model;
 	private String brand;
 	@OneToOne
-	Engine engine;
+	private Engine engine;
 	public int getId() {
 		return id;
 	}

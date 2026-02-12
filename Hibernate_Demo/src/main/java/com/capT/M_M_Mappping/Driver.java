@@ -1,4 +1,7 @@
-package com.capT.Mapping2;
+package com.capT.M_M_Mappping;
+
+import java.util.Arrays;
+import java.util.List;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -6,36 +9,24 @@ import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
 public class Driver {
-	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("dev");
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction et = em.getTransaction();
 		
-		Engine e = new Engine();
-		e.setId(100);
-		e.setCc(1500);
+		Trainer t1 = new Trainer(1,8144338402L,"Anjan");
+		Trainer t2 = new Trainer(2,9437222387L,"Dillip");
+		Trainer t3 = new Trainer(3,8249533566L,"Anjali");
+		List<Trainer> trainer = Arrays.asList(t1,t2,t3);
 		
-		Car c = new Car();
-		c.setId(1);
-		c.setModel("Tesla Model S");
-		c.setBrand("Tesla");
-		c.setEngine(e);
+		Subject s =  new Subject(1,"Java", trainer);
 		
 		et.begin();
-		em.persist(c);
-		em.persist(e);
+		em.persist(t1);
+		em.persist(t2);
+		em.persist(t3);
+		em.persist(s);
 		et.commit();
-		
-//		Trying to delete the engine
-//		Car c = em.find(Car.class,1);
-//		e = c.getEngine();
-//		
-//		
-//		et.begin();
-//		em.remove(e);
-//		et.commit();
 	}
-
 }
