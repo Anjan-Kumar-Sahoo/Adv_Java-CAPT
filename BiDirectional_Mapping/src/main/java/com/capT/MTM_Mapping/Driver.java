@@ -1,7 +1,6 @@
 package com.capT.MTM_Mapping;
 
 import java.util.Arrays;
-import java.util.List;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
