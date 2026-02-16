@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	<bean id="StudentObj" class="com.capT.Student" > 
+	    <constructor-arg value="Anjan"/>
+	    <constructor-arg>
+	        <array>
+	            <value>Java</value>
+	            <value>Spring</value>
+	            <value>SQL</value>
+	        </array>
+	    </constructor-arg>
+	</bean>
+	<bean id = "EmployeeObj" class="com.capT.Employee">
+		<!-- <property name="id" value="1" />
+		<property name="name" value="Anjan" />
+		<property name="laptop"  ref="myLap"></property>
+ -->
+ 		<constructor-arg value="2"  />  
+ 		<constructor-arg value="Ranga-Raju"  />
+ 		<constructor-arg ref="myLap"  />
+ 		<constructor-arg>
+	        <list>
+	            <value>Java</value>
+	            <value>Spring Boot</value>
+	            <value>My-SQL</value>
+	        </list>
+    		</constructor-arg>
+ 	</bean>
+	<bean id="myLap" class="com.capT.Laptop" >
+		<property name="id" value="1" />
+		<property name="name" value="Asus - Tuf" />
+	</bean>
+	<bean id="company" class="com.capT.Company">
+    <constructor-arg>
+        <map>
+            <entry key="101" value="Anjan"/>
+            <entry key="102" value="Anjali"/>
+        </map>
+    </constructor-arg>
+</bean>
+</beans>
