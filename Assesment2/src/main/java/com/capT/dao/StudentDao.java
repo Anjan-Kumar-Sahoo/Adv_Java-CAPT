@@ -5,13 +5,19 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+
+import com.capT.config.Config;
 import com.capT.entity.Student;
 
 @Component
 public class StudentDao {
-	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("dev");
+	
+	@Autowired
+	private static EntityManagerFactory emf;
 	
 	public Student saveStudent(Student s) {
 		EntityManager em = emf.createEntityManager();

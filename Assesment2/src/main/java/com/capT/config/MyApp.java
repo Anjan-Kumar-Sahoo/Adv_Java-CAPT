@@ -12,6 +12,7 @@ public class MyApp {
 	public static void main(String[] args) {
 		
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
+		
 		DepartmentService deptService = context.getBean(DepartmentService.class);
 		StudentService studentService = context.getBean(StudentService.class);
 		

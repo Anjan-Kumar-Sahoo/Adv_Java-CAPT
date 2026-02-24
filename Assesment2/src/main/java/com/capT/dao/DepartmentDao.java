@@ -5,8 +5,11 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
+import com.capT.config.Config;
 import com.capT.entity.Department;
 import com.capT.entity.Student;
 
@@ -14,7 +17,9 @@ import java.util.List;
 
 @Component
 public class DepartmentDao {
-	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("dev");
+	
+	@Autowired
+	private static EntityManagerFactory emf;
 	
 	public Department addDepartment(Department d) {
 		EntityManager em = emf.createEntityManager();
