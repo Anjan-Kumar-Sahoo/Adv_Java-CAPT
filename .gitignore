@@ -7,8 +7,7 @@ pom.xml.next
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
-.mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
+.mvn/
 
 # Java
 *.class
@@ -42,3 +41,90 @@ Thumbs.db
 
 # Test reports
 surefire-reports/
+
+# Tomcat & Server
+Servers/
+TomcatServer/
+**/apache-tomcat-*/
+logs/
+temp/
+work/
+.tomcat/
+
+# Server configuration (optional - uncomment if needed)
+# **/server.xml
+# **/tomcat-users.xml
+
+# Generated sources
+**/generated-sources/
+**/generated-test-sources/
+**/maven-status/
+**/maven-archiver/
+
+# Build artifacts
+**/m2e-wtp/
+*.deployed
+
+# Backup and temporary files
+*~
+*.bak
+*.swp
+*.swo
+*.tmp
+*.orig
+
+# IDE files
+*.iml~
+.apt_generated
+.apt_generated_tests
+.springBeans
+.sts4-cache
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+*.h2.db
+
+# Coverage reports
+.coverage
+coverage/
+htmlcov/
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Lock files
+*.lock
+package-lock.json
+
+# Cache directories
+.cache/
+*.cache
+
+# Log files
+*.log.*
+logs/
+*.out
+
+# Jetty server files
+**/jetty-web.xml
+
+# FreeMarker templates (if not used)
+# **/ftl/
+
+# PID files
+*.pid
+*.seed
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Miscellaneous
+*.gz
+*.zip
+*.rar
+*.7z
+node_modules/

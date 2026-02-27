@@ -2,8 +2,6 @@ package com.capT.Test;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.Parameter;
 import org.junit.After;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -11,8 +9,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.runners.Parameterized.Parameters;
+import org.junit.*;
 
 public class DemoTest {
 	
@@ -71,7 +69,7 @@ public class DemoTest {
 		Assertions.assertArrayEquals(a1,a2);
 		
 	}
-	@ParameterizedTest
+	@Parameters
 	@CsvSource({"2,3,5","10,20,30","-1,1,0"})
 	void testAddition(int a,int b,int expected)
 	{
