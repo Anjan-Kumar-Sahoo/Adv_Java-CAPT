@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Management System</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,16 +15,17 @@
         body {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 30px 0;
+            padding: 20px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
         }
         .main-container {
             background: white;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            padding: 0;
-            margin: 20px auto;
-            max-width: 1400px;
             overflow: hidden;
         }
         .header {
@@ -104,19 +104,17 @@
             margin-bottom: 35px;
         }
         .nav-btn {
-            padding: 18px 30px;
-            border-radius: 12px;
+            padding: 15px 25px;
+            border-radius: 10px;
             border: none;
-            font-weight: 700;
+            font-weight: 600;
             text-decoration: none;
             text-align: center;
             transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            font-size: 1.05rem;
+            display: inline-block;
+            font-size: 1rem;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
         }
         .nav-btn-home {
             background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
@@ -144,18 +142,20 @@
         table {
             margin: 0;
             width: 100%;
+            border-collapse: collapse;
         }
         thead {
             background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
             color: white;
         }
         thead th {
-            border: none !important;
-            padding: 18px 20px !important;
+            border: none;
+            padding: 18px 20px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 0.85rem;
+            text-align: left;
         }
         tbody tr {
             transition: all 0.2s;
@@ -169,7 +169,7 @@
             border-bottom: none;
         }
         tbody td {
-            padding: 18px 20px !important;
+            padding: 18px 20px;
             vertical-align: middle;
             color: #334155;
             font-size: 0.95rem;
@@ -223,25 +223,15 @@
         .no-data p {
             font-size: 1.05rem;
         }
-        .badge {
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
     </style>
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container">
         <div class="main-container">
             <div class="header">
                 <div class="header-content">
-                    <div class="row align-items-center">
-                        <div class="col-12">
-                            <h1>🏢 Employee Management System</h1>
-                            <p>Manage your workforce efficiently and effectively</p>
-                        </div>
-                    </div>
+                    <h1>🏢 Employee Management System</h1>
+                    <p>Manage your workforce efficiently and effectively</p>
                 </div>
             </div>
             
@@ -273,7 +263,7 @@
                 <div class="table-container">
                     <c:choose>
                         <c:when test="${not empty employees}">
-                            <table class="table table-hover">
+                            <table>
                                 <thead>
                                     <tr>
                                         <th>ID</th>
@@ -295,11 +285,11 @@
                                             <td>${emp.phone}</td>
                                             <td>${emp.email}</td>
                                             <td>
-                                                <a href="${contextPath}/edit?id=${emp.id}" class="btn btn-edit btn-sm">
+                                                <a href="${contextPath}/edit?id=${emp.id}" class="btn-edit">
                                                     ✏️ Edit
                                                 </a>
                                                 <a href="${contextPath}/delete?id=${emp.id}" 
-                                                   class="btn btn-delete btn-sm"
+                                                   class="btn-delete"
                                           	      onclick="return confirm('Are you sure you want to delete ${emp.name}?')">
                                                     🗑️ Delete
                                                 </a>
@@ -320,7 +310,5 @@
             </div>
         </div>
     </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -5,20 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Employee - EMS</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 20px 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
         }
         .main-container {
             background: white;
             border-radius: 15px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.2);
             padding: 40px;
-            margin: 50px auto;
-            max-width: 700px;
         }
         .header {
             background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
@@ -95,6 +102,10 @@
             grid-template-columns: 1fr 1fr;
             gap: 15px;
             margin-top: 30px;
+        }
+        input[type="submit"],
+        button {
+            cursor: pointer;
         }
         .nav-buttons {
             display: flex;
@@ -173,17 +184,15 @@
                 </div>
                 
                 <div class="button-group">
-                    <a href="${contextPath}/home" class="btn btn-back">
+                    <a href="${contextPath}/home" class="btn-back">
                         ← Back to List
                     </a>
-                    <button type="submit" class="btn btn-submit">
+                    <button type="submit" class="btn-submit">
                         💾 Save Employee
                     </button>
                 </div>
             </form>
         </div>
     </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
