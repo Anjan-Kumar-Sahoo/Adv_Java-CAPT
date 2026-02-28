@@ -8,6 +8,9 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/
+mvnw
+mvnw.cmd
+.flattened-pom.xml
 
 # Java
 *.class
@@ -128,3 +131,25 @@ logs/
 *.rar
 *.7z
 node_modules/
+
+# Spring Boot
+HELP.md
+!**/src/main/**/target/
+!**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
+build/
+.nb-gradle/
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+spring-boot-devtools.properties
+.spring-boot-devtools.properties
+application-local.properties
+application-local.yml
+application-dev.properties
+application-dev.yml
+.attach_pid*
+derby.log
+replay_pid*
