@@ -49,7 +49,7 @@ public class DemmoController {
 		return "Student ID = "+id+" Name = "+name;
 	}
 	
-	@GetMapping("/student")
+	@GetMapping("/students")
 	public Student getStudent(@RequestBody Student s)
 	{
 		System.out.println(s.getId());
