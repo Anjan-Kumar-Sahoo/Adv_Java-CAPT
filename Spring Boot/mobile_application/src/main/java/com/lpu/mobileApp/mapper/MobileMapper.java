@@ -1,4 +1,4 @@
-package com.lpu.mobileApp.repository;
+package com.lpu.mobileApp.mapper;
 
 import org.mapstruct.Mapper;
 
@@ -7,7 +7,7 @@ import com.lpu.mobileApp.dto.MobileResponseDto;
 import com.lpu.mobileApp.entity.Mobile;
 
 @Mapper(componentModel = "spring")
-public interface UserMapper{
+public interface MobileMapper {
 	
 	Mobile toEntity(MobileRequestDto rt);
 	MobileResponseDto toDto(Mobile m);

@@ -15,7 +15,7 @@ import com.lpu.mobileApp.dto.MobileResponseDto;
 import com.lpu.mobileApp.entity.Mobile;
 import com.lpu.mobileApp.exception.ResourceNotFoundException;
 import com.lpu.mobileApp.repository.MobileRepository;
-import com.lpu.mobileApp.repository.UserMapper;
+import com.lpu.mobileApp.mapper.MobileMapper;
 
 @Service
 @Primary
@@ -25,7 +25,7 @@ public class MobileServiceImp implements MobileServices{
 	MobileRepository mr;
 	
 	@Autowired
-	UserMapper um;
+	MobileMapper um;
 
 	@Override
 	@CachePut(value = "mobile", key = "#result.id")
