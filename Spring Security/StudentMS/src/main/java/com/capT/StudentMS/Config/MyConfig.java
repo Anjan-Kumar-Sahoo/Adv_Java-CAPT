@@ -1,4 +1,4 @@
-package com.capT.demo2.Config;
+package com.capT.StudentMS.Config;
 
 import java.util.List;
 
@@ -8,7 +8,6 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -22,13 +21,12 @@ public class MyConfig {
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception
 	{
-//		Stateless --- If Required --- Never --- Always
-//		http.sessionManagement((s)->s.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 		http.csrf((c)->c.disable());
 		http.authorizeHttpRequests((req)->
-		req.requestMatchers("/demo2/register","/demo2/public","/demo2/error").permitAll()
-		.requestMatchers("/delete").hasRole("ADMIN")
-		.requestMatchers("/upadte").hasAllRoles("ADMIN","USER")
+		req.requestMatchers("/actuator/**").permitAll()
+		.requestMatchers("/student/save").permitAll()
+		.requestMatchers("/student/find","/student/find/page").hasRole("ADMIN")
+		.requestMatchers("/student/update/**","/student/delete/**","/student/upload/**","/student/download/**").hasAnyRole("ADMIN","USER")
 		.anyRequest().authenticated());
 		http.cors(c->{});
 		http.formLogin(Customizer.withDefaults());//for chrome
@@ -56,3 +54,4 @@ public class MyConfig {
 		return source;
 	}
 }
+
