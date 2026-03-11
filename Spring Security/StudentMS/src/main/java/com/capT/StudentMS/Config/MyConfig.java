@@ -23,8 +23,7 @@ public class MyConfig {
 	{
 		http.csrf((c)->c.disable());
 		http.authorizeHttpRequests((req)->
-		req.requestMatchers("/actuator/**").permitAll()
-		.requestMatchers("/student/save").permitAll()
+		req.requestMatchers("/actuator/**","/student/save").permitAll()
 		.requestMatchers("/student/find","/student/find/page").hasRole("ADMIN")
 		.requestMatchers("/student/update/**","/student/delete/**","/student/upload/**","/student/download/**").hasAnyRole("ADMIN","USER")
 		.anyRequest().authenticated());

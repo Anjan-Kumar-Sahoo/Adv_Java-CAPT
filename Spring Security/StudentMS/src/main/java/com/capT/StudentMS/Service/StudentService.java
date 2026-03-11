@@ -32,20 +32,20 @@ public class StudentService {
 		s.setPassword(passwordEncoder.encode(s.getPassword()));
 		return repo.save(s);	
 	}
-	@PostAuthorize("returnObject.email == authentication.name or hasRole('ROLE_ADMIN')")
+	@PostAuthorize("returnObject.email == authentication.name or hasRole('ADMIN')")
 	@Cacheable(value = "students", key = "#id")
 	public Student findById(int id)
 	{
 		return repo.findById(id).orElseThrow(() 
 		-> new StudentNotFoundException(" Student with "+id+" not  Founnd"));
 	}
-	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@PreAuthorize("hasRole('ADMIN')")
 	@Cacheable(value = "allStudents")
 	public List<Student> findAllStudnets()
 	{
 		return repo.findAll();
 	}
-	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@PreAuthorize("hasRole('ADMIN')")
 	@Cacheable(value = "allStudentsPage", key = "#pageable")
 	public Page<Student> findAllStudnets(Pageable pageable)
 	{
@@ -62,7 +62,7 @@ public class StudentService {
 		old.setMarks(s.getMarks());
 		return repo.save(old);
 	}
-	@PostAuthorize("returnObject.email == authentication.name or hasRole('ROLE_ADMIN')")
+	@PostAuthorize("returnObject.email == authentication.name or hasRole('ADMIN')")
 	public Student deleteStudent(int id)
 	{
 		Student student = repo.findById(id).orElseThrow(() 

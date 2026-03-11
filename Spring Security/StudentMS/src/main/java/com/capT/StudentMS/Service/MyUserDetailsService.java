@@ -24,10 +24,6 @@ public class MyUserDetailsService implements UserDetailsService {
 				.orElseThrow(() 
 	-> new UsernameNotFoundException("User not found with email: " + email));
 		 
-		return User.builder()
-				.username(student.getEmail())
-				.password(student.getPassword())
-				.roles(student.getRole())
-				.build();
+		return new StudentUserDetails(student);
 	}
 }
